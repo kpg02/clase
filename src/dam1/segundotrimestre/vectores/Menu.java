@@ -8,11 +8,12 @@ import java.util.regex.Pattern;
 public class Menu {
 
     public static void main(String[] args){
+        Concesionario concesionario = new Concesionario();
        mostrar();
     }
 
 
-    private static void crearVehiculo(){
+   /* private static void crearVehiculo(){
         String descripcion, marca, matricula, nombre, dni, fecha;
         int numeroKilometros, precio;
         boolean error = false; // Flags para comprobar que las variables son válidas
@@ -80,7 +81,7 @@ public class Menu {
 
         System.out.println("Introduce el DNI del propietario:");
         dni = sc.next();
-    }
+    } */
 
     private static void mostrar(){
         System.out.println("1 - Nuevo vehículo");
