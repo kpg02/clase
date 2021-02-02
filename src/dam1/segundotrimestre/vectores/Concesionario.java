@@ -11,7 +11,7 @@ public class Concesionario {
         numeroCoches = 0;
     }
 
-    private Vehiculo buscarVehiculo(String matricula){
+    public Vehiculo buscarVehiculo(String matricula){
         for (int i = 0; i < numeroCoches; i++) {
             if (coches[i].tieneMatricula(matricula)){
                 return coches[i];
@@ -20,13 +20,13 @@ public class Concesionario {
         return null;
     }
 
-    private int insertarVehiculo() {
+    public int insertarVehiculo() {
         Vehiculo nuevoCoche = new Vehiculo();
 
         if(this.numeroCoches == 50){
-            return -2;
-        }else if (buscarVehiculo(nuevoCoche.getMatricula()) != null) {
             return -1;
+        }else if (buscarVehiculo(nuevoCoche.getMatricula()) != null) {
+            return -2;
         }
 
         coches[numeroCoches] = nuevoCoche;
@@ -34,13 +34,13 @@ public class Concesionario {
         return 0;
     }
 
-    private void listarVehiculos(){
+    public void listarVehiculos(){
         for (int i = 0; i < numeroCoches ; i++) {
             System.out.println(coches[i].toString());
         }
     }
 
-    private boolean actualizarKilometros(String matricula, int numeroKilometros){
+    public boolean actualizarKilometros(String matricula, int numeroKilometros){
         Vehiculo coche = buscarVehiculo(matricula);
 
         return coche != null && coche.cambiarKilometros(numeroKilometros);
